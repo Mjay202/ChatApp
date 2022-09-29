@@ -12,7 +12,18 @@ code {
     monospace;
 }
 
-.msgContainer {
-    border: 1px solid black;
-    border-radius: 2px;
+.msgContainer{
+  width: 100%;
+  border: 1px solid rgb(58, 55, 55);
+  height: 60vw;
+  border-radius: 2px;
+}
+
+textarea {
+    box-sizing: border-box;
+    height: 70vw;
+    border: 1px solid rgb(37, 35, 35);
+    height: 90vw;
+
+    
 }

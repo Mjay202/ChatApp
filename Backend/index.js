@@ -12,7 +12,7 @@ app.use(cors())
 
 // set up moongoose
 
-
+let PORT = 5000
 const connection = app.listen(PORT, ()=> {
     console.log("The server has started successfully at PORT " + PORT)
 })
@@ -26,5 +26,13 @@ const io = socketServer(connection, {
 })
 
 io.on('connection', (socket)=>{
-    console.log('Socket connected succesfully')
+    console.log(socket.id)
+    console.log('A user has connected succesfully')
+    socket.on("sendMsg", (message)=>{
+        console.log(message)
+        io.emit("broadcastMsg", message)
+    })
+    socket.on("disconnect", ()=>{
+        console.log(socket.id + " has just disconnected")
+    })
 })
