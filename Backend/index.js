@@ -25,4 +25,6 @@ const io = socketServer(connection, {
 
 })
 
-io.on('connection')
+io.on('connection', (socket)=>{
+    console.log('Socket connected succesfully')
+})
