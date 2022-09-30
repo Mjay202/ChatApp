@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 
 const Display = ({socket}) => {
 
@@ -13,12 +13,9 @@ const Display = ({socket}) => {
         if (socket.current) {
             socket.current.on("broadcastMsg", (receivedMessage)=>{
                 console.log(receivedMessage)
-        }
-        
-    })
-    
-    
+        })
     }
+    })
   return (
     <>
         <div className="container">
